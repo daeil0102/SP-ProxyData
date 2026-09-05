@@ -16,16 +16,15 @@ public class ChatFromProxyListener implements Listener {
 
         if (!event.getPluginName().equals(plugin.getName())) return;
         if (!event.getEventName().equals("OnChat")) return;
-        if (!event.getRawMessage().isFromClient()) return;
 
         PluginMessage pluginMessage = event.getRawMessage();
 
         String playerName = pluginMessage.username();
 
-        if (pluginMessage.data().get("value") == null) return;
+        if (event.getValue() == null) return;
 
 
-        String message = pluginMessage.data().get("value").toString();
+        String message = event.getValue().toString();
 
         plugin.getServer().broadcastMessage(playerName + ": " + message);
 
