@@ -2,6 +2,8 @@ package net.teujaem.plugin;
 
 import net.teujaem.plugin.broadcast.command.BroadcastCmd;
 import net.teujaem.plugin.broadcast.listener.BroadcastListener;
+import net.teujaem.plugin.chat.listener.ChatFromLocalListener;
+import net.teujaem.plugin.chat.listener.ChatFromProxyListener;
 import net.teujaem.plugin.config.ConfigManager;
 import net.teujaem.plugin.config.LoadConfig;
 import net.teujaem.plugin.player.listener.DataLoadingListener;
@@ -45,6 +47,8 @@ public final class SPProxyData extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LoadData(), this);
         getServer().getPluginManager().registerEvents(new SaveData(), this);
         getServer().getPluginManager().registerEvents(new DataLoadingListener(), this);
+        getServer().getPluginManager().registerEvents(new ChatFromLocalListener(), this);
+        getServer().getPluginManager().registerEvents(new ChatFromProxyListener(), this);
 
         configManager = LoadConfig.load(this);
     }
