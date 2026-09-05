@@ -1,6 +1,6 @@
 name: SP-ProxyData
 version: '${version}'
-main: net.teujaem.plugin.SPProxyData
+main: net.teujaem.spProxyData.SPProxyData
 api-version: '${spigot_api_version}'
 depend:
   - SP-Framework
