@@ -1,0 +1,9 @@
+name: SP-ProxyData
+version: '${version}'
+main: net.teujaem.plugin.SPProxyData
+api-version: '${spigot_api_version}'
+depend:
+  - SP-Framework
+commands:
+  broadcast:
+    permission: spporxydata.broadcast

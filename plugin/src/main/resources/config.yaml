@@ -1,0 +1,20 @@
+# 해당 서버를 표시할 이름
+# 작성 안할 시 폴더이름 작성됨
+name: "server name"
+
+broadcast:
+  # 지원하는 형식
+  # {server} - 해당 커맨드를 실행한 서버이름
+  # {local_server} - 이 서버이름
+  # {message} - 커맨드로 실행한 메세지
+  style: "&a[ {server} ] {message}"
+
+datalink:
+  inventory: true
+  ender-chest: true
+  level: true
+  hp: true
+  food: true
+  world: true
+  location: true
+  gamemode: true
