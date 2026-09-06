@@ -1,7 +1,7 @@
 package net.teujaem.spProxyData.player.listener;
 
 import net.teujaem.spProxyData.SPProxyData;
-import net.teujaem.plugin.api.DataBase;
+import net.teujaem.spFramework.api.DataBase;
 import net.teujaem.spProxyData.config.ConfigManager;
 import net.teujaem.spProxyData.player.api.event.PlayerDataLoadEvent;
 import net.teujaem.spProxyData.player.entity.PlayerEntity;

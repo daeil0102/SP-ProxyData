@@ -1,7 +1,7 @@
 package net.teujaem.spProxyData.broadcast.listener;
 
 import net.teujaem.spProxyData.util.TextColorFormatter;
-import net.teujaem.plugin.api.event.ProxyEvent;
+import net.teujaem.spFramework.api.event.ProxyEvent;
 import net.teujaem.spProxyData.SPProxyData;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

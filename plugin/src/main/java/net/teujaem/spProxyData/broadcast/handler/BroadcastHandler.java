@@ -1,8 +1,8 @@
 package net.teujaem.spProxyData.broadcast.handler;
 
-import net.teujaem.plugin.api.ProxyData;
+import net.teujaem.spFramework.api.ProxyData;
 import net.teujaem.spProxyData.SPProxyData;
-import net.teujaem.plugin.websoket.PluginMessage;
+import net.teujaem.spFramework.websoket.PluginMessage;
 
 import java.util.HashMap;
 import java.util.Map;

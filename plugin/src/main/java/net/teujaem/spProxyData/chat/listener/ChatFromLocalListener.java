@@ -1,8 +1,8 @@
 package net.teujaem.spProxyData.chat.listener;
 
 import net.teujaem.spProxyData.SPProxyData;
-import net.teujaem.plugin.api.ProxyData;
-import net.teujaem.plugin.websoket.PluginMessage;
+import net.teujaem.spFramework.api.ProxyData;
+import net.teujaem.spFramework.websoket.PluginMessage;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;

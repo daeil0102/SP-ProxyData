@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT")
-    compileOnly(files("../libs/SP-Framework-1.0.0-plugin.jar"))
+    compileOnly(files("../libs/SP-Framework-1.0.0-plugin-base.jar"))
     compileOnly(libs.hibernate.core)
     compileOnly(libs.jackson.core)
     compileOnly(libs.jackson.databind)
