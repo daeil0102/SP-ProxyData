@@ -8,26 +8,21 @@ import org.bukkit.event.Listener;
 
 public class ChatFromProxyListener implements Listener {
 
-
     @EventHandler
     public void onChatEvent(ProxyEvent event) {
-
         SPProxyData plugin = SPProxyData.getInstance();
+        if (plugin == null || !plugin.isEnabled()) return;
 
-        if (!event.getPluginName().equals(plugin.getName())) return;
-        if (!event.getEventName().equals("OnChat")) return;
+        try {
+            if (!plugin.getName().equalsIgnoreCase(event.getPluginName())) return;
+            if (!"OnChat".equalsIgnoreCase(event.getEventName()) || event.getValue() == null) return;
 
-        PluginMessage pluginMessage = event.getRawMessage();
+            PluginMessage pluginMessage = event.getRawMessage();
+            if (pluginMessage == null || pluginMessage.username() == null) return;
 
-        String playerName = pluginMessage.username();
-
-        if (event.getValue() == null) return;
-
-
-        String message = event.getValue().toString();
-
-        plugin.getServer().broadcastMessage(playerName + ": " + message);
-
+            plugin.getServer().broadcastMessage(pluginMessage.username() + ": " + event.getValue());
+        } catch (Exception | LinkageError exception) {
+            plugin.getLogger().warning("프록시 채팅 수신 처리 실패: " + exception.getMessage());
+        }
     }
-
 }

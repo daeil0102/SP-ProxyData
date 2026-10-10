@@ -4,6 +4,7 @@ import net.teujaem.spProxyData.SPProxyData;
 import net.teujaem.spFramework.api.ProxyData;
 import net.teujaem.spFramework.websoket.PluginMessage;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 
@@ -12,27 +13,29 @@ import java.util.Map;
 
 public class ChatFromLocalListener implements Listener {
 
-
-    @EventHandler
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
     public void onChatEvent(PlayerChatEvent event) {
-
         SPProxyData plugin = SPProxyData.getInstance();
+        if (plugin == null || !plugin.isEnabled()) return;
 
-        Map<String, Object> data = new HashMap<>();
-        data.put("eventname", "OnChat");
-        data.put("value", event.getMessage());
-        data.put("server", plugin.getConfigManager().getName());
+        try {
+            Map<String, Object> data = new HashMap<>();
+            data.put("eventname", "OnChat");
+            data.put("value", event.getMessage());
+            data.put("server", plugin.getConfigManager().getName());
 
-        PluginMessage pluginMessage = new PluginMessage(
-                "server",
-                plugin.getName(),
-                event.getPlayer().getUniqueId(),
-                event.getPlayer().getName(),
-                data
-        );
+            PluginMessage pluginMessage = new PluginMessage(
+                    "server",
+                    plugin.getName(),
+                    event.getPlayer().getUniqueId(),
+                    event.getPlayer().getName(),
+                    data
+            );
 
-        ProxyData.sendToServer(pluginMessage);
-
-        event.setCancelled(true);
+            ProxyData.sendToServer(pluginMessage);
+            event.setCancelled(true);
+        } catch (Exception | LinkageError exception) {
+            plugin.getLogger().warning("전체 채팅 프록시 전송 실패, 로컬 채팅으로 처리합니다: " + exception.getMessage());
+        }
     }
 }
