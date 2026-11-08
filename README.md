@@ -2,11 +2,11 @@
 
 <p>해당 프로젝트는 프록시용 서버에서 데이터를 쉽게 처리하는 프로젝트 입니다</p>
 <p>해당 플러그인을 사용하기 위해선 SP-Framework가 필요합니다</p>
-<p>해당 프로젝트는 미완성된 프로젝트 입니다 일부 오류가 있을 수 있습니다</p>
 
 <h2>플러그인 버전</h2>
 
-- 플러그인 : spigot 1.12+
+- 플러그인 : spigot 1.21.11 (Java 21)
+  - base 버전 사용
 
 <h2>라이센스</h2>
 
@@ -21,7 +21,7 @@ https://discord.gg/QyuCbDs6nG
 
 <h2>config</h2>
 
-<p>bukkit/plugins/SP-ProxyData/config.yml</p>
+<p>bukkit/plugins/SP-ProxyData/config.yaml</p>
 
 ```
 # 해당 서버를 표시할 이름
